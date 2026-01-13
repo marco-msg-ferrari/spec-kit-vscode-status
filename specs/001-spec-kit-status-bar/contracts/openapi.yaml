@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+    title: Spec-Kit Status Bar Extension API
+    version: 1.0.0
+paths:
+    /status:
+        get:
+            summary: Get status bar indicator state
+            responses:
+                '200':
+                    description: Status bar indicator state
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    visible:
+                                        type: boolean
+                                    emoji:
+                                        type: string
+                                    tooltip:
+                                        type: string
+    /workspace-roots:
+        get:
+            summary: Get workspace roots and .specify presence
+            responses:
+                '200':
+                    description: List of workspace roots and .specify status
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        uri:
+                                            type: string
+                                        hasSpecify:
+                                            type: boolean
