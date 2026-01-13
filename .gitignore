@@ -1,1 +1,13 @@
 /.vscode/
+**/.vscode-test/
+**/node_modules/
+**/dist/
+**/build/
+**/out/
+**/coverage/
+*.log
+.env*
+*.tmp
+*.swp
+Thumbs.db
+.DS_Store
