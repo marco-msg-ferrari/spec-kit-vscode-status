@@ -2,6 +2,7 @@ import * as assert from 'assert';
 import * as vscode from 'vscode';
 import { SpecKitDetector } from '../../services/specifyDetector';
 import { StatusBarService } from '../../services/statusBarService';
+import { ActiveSpecResolverStub } from '../helpers/activeSpecResolverStub';
 import {
     createWorkspaceFixture,
     WorkspaceStub,
@@ -23,7 +24,12 @@ describe('StatusBarService (startup)', () => {
             const windowStub = {
                 createStatusBarItem: () => item,
             } as unknown as typeof vscode.window;
-            const service = new StatusBarService(detector, windowStub);
+            const resolver = new ActiveSpecResolverStub();
+            const service = new StatusBarService(
+                detector,
+                resolver,
+                windowStub
+            );
 
             service.activate();
 
@@ -47,7 +53,12 @@ describe('StatusBarService (startup)', () => {
             const windowStub = {
                 createStatusBarItem: () => item,
             } as unknown as typeof vscode.window;
-            const service = new StatusBarService(detector, windowStub);
+            const resolver = new ActiveSpecResolverStub();
+            const service = new StatusBarService(
+                detector,
+                resolver,
+                windowStub
+            );
 
             service.activate();
 
@@ -69,7 +80,12 @@ describe('StatusBarService (startup)', () => {
             const windowStub = {
                 createStatusBarItem: () => item,
             } as unknown as typeof vscode.window;
-            const service = new StatusBarService(detector, windowStub);
+            const resolver = new ActiveSpecResolverStub();
+            const service = new StatusBarService(
+                detector,
+                resolver,
+                windowStub
+            );
 
             service.activate();
             assert.equal(item.visible, false);
@@ -124,6 +140,8 @@ class TestStatusBarItem implements vscode.StatusBarItem {
     visible = false;
     disposed = false;
 }
+
+// The ActiveSpecResolverStub class is now imported from '../helpers/activeSpecResolverStub'.
 
 function waitForStatusChange(detector: SpecKitDetector): Promise<void> {
     return new Promise((resolve) => {

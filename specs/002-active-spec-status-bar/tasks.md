@@ -7,16 +7,16 @@
 
 **Purpose**: Bootstrap the extension workspace and tooling for active spec support
 
-- [ ] T001 Create ActiveSpecResolver utility in src/services/activeSpecResolver.ts
-- [ ] T002 [P] Add unit test skeleton for ActiveSpecResolver in src/test/suite/activeSpecResolver.test.ts
-- [ ] T003 Update extension manifest and README for new feature in package.json and README.md
+- [x] T001 Create ActiveSpecResolver utility in src/services/activeSpecResolver.ts
+- [x] T002 [P] Add unit test skeleton for ActiveSpecResolver in src/test/suite/activeSpecResolver.test.ts
+- [x] T003 Update extension manifest and README for new feature in package.json and README.md
 
 ## Phase 2: Foundational (Blocking Prerequisites)
 
 **Purpose**: Establish core detection, resolver, and test harness required by all stories
 
-- [ ] T004 Integrate ActiveSpecResolver with SpecKitDetector in src/extension.ts
-- [ ] T005 [P] Add integration test skeleton for status bar spec name in src/test/suite/statusBarActiveSpec.spec.ts
+- [x] T004 Integrate ActiveSpecResolver with SpecKitDetector in src/extension.ts
+- [x] T005 [P] Add integration test skeleton for status bar spec name in src/test/suite/statusBarActiveSpec.spec.ts
 
 **Checkpoint**: Core resolver and test utilities ready for story work
 
@@ -28,14 +28,14 @@
 
 ### Tests for User Story 1
 
-- [ ] T006 [P] [US1] Add unit tests for spec resolution logic in src/test/suite/activeSpecResolver.test.ts
-- [ ] T007 [P] [US1] Add integration test for status bar text in src/test/suite/statusBarActiveSpec.spec.ts
+- [x] T006 [P] [US1] Add unit tests for spec resolution logic in src/test/suite/activeSpecResolver.test.ts
+- [x] T007 [P] [US1] Add integration test for status bar text in src/test/suite/statusBarActiveSpec.spec.ts
 
 ### Implementation for User Story 1
 
-- [ ] T008 [US1] Implement ActiveSpecResolver logic in src/services/activeSpecResolver.ts
-- [ ] T009 [US1] Update StatusBarService to append active spec name in src/services/statusBarService.ts
-- [ ] T010 [US1] Wire resolver and status bar update in src/extension.ts
+- [x] T008 [US1] Implement ActiveSpecResolver logic in src/services/activeSpecResolver.ts
+- [x] T009 [US1] Update StatusBarService to append active spec name in src/services/statusBarService.ts
+- [x] T010 [US1] Wire resolver and status bar update in src/extension.ts
 
 **Checkpoint**: MVP delivers accurate status bar with active spec name
 
@@ -47,12 +47,12 @@
 
 ### Tests for User Story 2
 
-- [ ] T011 [P] [US2] Add integration test for dynamic spec change in src/test/suite/statusBarActiveSpecDynamic.spec.ts
+- [x] T011 [P] [US2] Add integration test for dynamic spec change in src/test/suite/statusBarActiveSpecDynamic.spec.ts
 
 ### Implementation for User Story 2
 
-- [ ] T012 [US2] Subscribe to Git extension events and SPECIFY_FEATURE env changes in src/services/activeSpecResolver.ts
-- [ ] T013 [US2] Update status bar on resolver events in src/services/statusBarService.ts
+- [x] T012 [US2] Subscribe to Git extension events and SPECIFY_FEATURE env changes in src/services/activeSpecResolver.ts
+- [x] T013 [US2] Update status bar on resolver events in src/services/statusBarService.ts
 
 **Checkpoint**: Indicator stays in sync with real-time active spec changes
 
@@ -60,9 +60,9 @@
 
 **Purpose**: Finalize documentation, packaging, and resiliency touches
 
-- [ ] T014 Document active spec behavior and troubleshooting in README.md
-- [ ] T015 Harden error handling and add logging guards in src/services/activeSpecResolver.ts
-- [ ] T016 [P] Validate quickstart by running compile, test, and package workflows in specs/002-active-spec-status-bar/quickstart.md
+- [x] T014 Document active spec behavior and troubleshooting in README.md
+- [x] T015 Harden error handling and add logging guards in src/services/activeSpecResolver.ts
+- [x] T016 [P] Validate quickstart by running compile, test, and package workflows in specs/002-active-spec-status-bar/quickstart.md
 
 ---
 
