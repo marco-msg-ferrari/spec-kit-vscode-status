@@ -1,7 +1,7 @@
 {
     "name": "spec-kit-status-bar",
     "displayName": "Spec-Kit Status Bar",
-    "description": "Shows a 🌱 indicator when the workspace uses Spec-Kit (.specify directory detected).",
+    "description": "Shows a 🌱 indicator with the active Spec-Kit spec when the workspace uses Spec-Kit (.specify directory detected).",
     "version": "0.0.1",
     "publisher": "spec-kit",
     "license": "MIT",

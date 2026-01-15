@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+    title: Active Spec Status Bar API
+    version: 1.0.0
+paths:
+    /status:
+        get:
+            summary: Get current status bar presentation state
+            responses:
+                '200':
+                    description: Status bar view model
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    visible:
+                                        type: boolean
+                                    text:
+                                        type: string
+                                    tooltip:
+                                        type: string
+                                    specName:
+                                        type: string
+                                        nullable: true
+    /active-spec:
+        get:
+            summary: Resolve the currently active spec metadata
+            responses:
+                '200':
+                    description: Active spec state
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    specName:
+                                        type: string
+                                        nullable: true
+                                    source:
+                                        type: string
+                                        enum:
+                                            - env
+                                            - git
+                                            - fallback
+                                            - unknown
+                                    specExists:
+                                        type: boolean
+                                    lastUpdated:
+                                        type: string
+                                        format: date-time
+    /workspace-roots:
+        get:
+            summary: Inspect workspace roots for Spec-Kit presence
+            responses:
+                '200':
+                    description: List of workspace roots and detection results
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        uri:
+                                            type: string
+                                        hasSpecify:
+                                            type: boolean
