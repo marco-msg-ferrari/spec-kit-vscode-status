@@ -69,7 +69,7 @@ specs/001-spec-kit-status-bar/
 ### Source Code (repository root)
 
 ```text
-extensions/spec-kit-status-bar/
+extension package root
 ├── package.json
 ├── tsconfig.json
 ├── src/
@@ -87,7 +87,7 @@ extensions/spec-kit-status-bar/
 └── out/                      # Compiled JavaScript (gitignored)
 ```
 
-**Structure Decision**: Single VS Code extension package under `extensions/spec-kit-status-bar`, separating services for detection and UI, plus dedicated test utilities.
+**Structure Decision**: Single VS Code extension package under the extension workspace, separating services for detection and UI, plus dedicated test utilities.
 
 ## Complexity Tracking
 

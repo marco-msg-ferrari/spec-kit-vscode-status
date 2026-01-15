@@ -7,22 +7,20 @@
 
 **Purpose**: Bootstrap the VS Code extension workspace and tooling
 
-- [X] T001 Initialize VS Code extension scaffold with TypeScript template in extensions/spec-kit-status-bar/package.json
-- [X] T002 Configure build, lint, and test npm scripts plus dev dependencies in extensions/spec-kit-status-bar/package.json
-- [X] T003 [P] Align TypeScript compiler options with project constraints in extensions/spec-kit-status-bar/tsconfig.json
-
+- [X] T001 Initialize VS Code extension scaffold with a TypeScript template in the extension manifest (package.json)
+- [X] T002 Configure build, lint, and test npm scripts plus dev dependencies in package.json
+- [X] T003 [P] Align TypeScript compiler options with project constraints in tsconfig.json
 
 ## Phase 2: Foundational (Blocking Prerequisites)
 
 **Purpose**: Establish core services and test harness required by all stories
 
-- [X] T004 Create SpecKit detector service skeleton exposing workspace scan hooks in extensions/spec-kit-status-bar/src/services/specifyDetector.ts
-- [X] T005 Create status bar service skeleton managing emoji item lifecycle in extensions/spec-kit-status-bar/src/services/statusBarService.ts
-- [X] T006 Wire activation entry to instantiate foundational services in extensions/spec-kit-status-bar/src/extension.ts
-- [X] T007 Provision reusable workspace test helpers for multi-root scenarios in extensions/spec-kit-status-bar/src/test/helpers/workspaceFactory.ts
+- [X] T004 Create SpecKit detector service skeleton exposing workspace scan hooks in src/services/specifyDetector.ts
+- [X] T005 Create status bar service skeleton managing emoji item lifecycle in src/services/statusBarService.ts
+- [X] T006 Wire activation entry to instantiate foundational services in src/extension.ts
+- [X] T007 Provision reusable workspace test helpers for multi-root scenarios in src/test/helpers/workspaceFactory.ts
 
 **Checkpoint**: Core services and test utilities ready for story work
-
 
 ## Phase 3: User Story 1 - See Spec-Kit Status (Priority: P1) 🎯 MVP
 
@@ -32,17 +30,16 @@
 
 ### Tests for User Story 1
 
-- [X] T008 [P] [US1] Add detector unit tests covering initial workspace scans in extensions/spec-kit-status-bar/src/test/suite/specifyDetector.test.ts
-- [X] T009 [P] [US1] Add status bar integration test validating emoji visibility on activation in extensions/spec-kit-status-bar/src/test/suite/statusBarStart.spec.ts
+- [X] T008 [P] [US1] Add detector unit tests covering initial workspace scans in src/test/suite/specifyDetector.test.ts
+- [X] T009 [P] [US1] Add status bar integration test validating emoji visibility on activation in src/test/suite/statusBarStart.spec.ts
 
 ### Implementation for User Story 1
 
-- [X] T010 [US1] Implement initial `.specify` detection across workspace roots in extensions/spec-kit-status-bar/src/services/specifyDetector.ts
-- [X] T011 [US1] Implement status bar presentation logic with tooltip copy in extensions/spec-kit-status-bar/src/services/statusBarService.ts
-- [X] T012 [US1] Trigger detection during activation and update subscriptions in extensions/spec-kit-status-bar/src/extension.ts
+- [X] T010 [US1] Implement initial `.specify` detection across workspace roots in src/services/specifyDetector.ts
+- [X] T011 [US1] Implement status bar presentation logic with tooltip copy in src/services/statusBarService.ts
+- [X] T012 [US1] Trigger detection during activation and update subscriptions in src/extension.ts
 
 **Checkpoint**: MVP delivers accurate status at startup
-
 
 ## Phase 4: User Story 2 - Dynamic Status Update (Priority: P2)
 
@@ -52,24 +49,23 @@
 
 ### Tests for User Story 2
 
-- [X] T013 [P] [US2] Extend detector unit tests to cover workspace folder change events in extensions/spec-kit-status-bar/src/test/suite/specifyDetector.test.ts
-- [X] T014 [P] [US2] Add dynamic integration test simulating `.specify` create/delete in extensions/spec-kit-status-bar/src/test/suite/statusBarDynamic.spec.ts
+- [X] T013 [P] [US2] Extend detector unit tests to cover workspace folder change events in src/test/suite/specifyDetector.test.ts
+- [X] T014 [P] [US2] Add dynamic integration test simulating `.specify` create/delete in src/test/suite/statusBarDynamic.spec.ts
 
 ### Implementation for User Story 2
 
-- [X] T015 [US2] Handle workspace folder add/remove events to rescan roots in extensions/spec-kit-status-bar/src/services/specifyDetector.ts
-- [X] T016 [US2] Register FileSystemWatcher for `.specify` directory changes and emit updates in extensions/spec-kit-status-bar/src/services/specifyDetector.ts
-- [X] T017 [US2] Subscribe status bar service to detector notifications and manage disposables in extensions/spec-kit-status-bar/src/services/statusBarService.ts
+- [X] T015 [US2] Handle workspace folder add/remove events to rescan roots in src/services/specifyDetector.ts
+- [X] T016 [US2] Register FileSystemWatcher for `.specify` directory changes and emit updates in src/services/specifyDetector.ts
+- [X] T017 [US2] Subscribe status bar service to detector notifications and manage disposables in src/services/statusBarService.ts
 
 **Checkpoint**: Indicator stays in sync with real-time workspace changes
-
 
 ## Phase 5: Polish & Cross-Cutting Concerns
 
 **Purpose**: Finalize documentation, packaging, and resiliency touches
 
-- [X] T018 Document status indicator behavior and troubleshooting in extensions/spec-kit-status-bar/README.md
-- [X] T019 Harden error handling paths and add logging guards in extensions/spec-kit-status-bar/src/extension.ts
+- [X] T018 Document status indicator behavior and troubleshooting in README.md
+- [X] T019 Harden error handling paths and add logging guards in src/extension.ts
 - [X] T020 [P] Validate quickstart by running compile, test, and package workflows in specs/001-spec-kit-status-bar/quickstart.md
 
 ---
